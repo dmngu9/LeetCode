@@ -20,7 +20,6 @@ public class Solution {
     }
     
     public ListNode[] partition(ListNode head, ListNode tail) {
-
         ListNode pIndex = head;
         ListNode pivot = tail;
         ListNode cursor = head;
@@ -46,24 +45,16 @@ public class Solution {
         ListNode[] list = new ListNode[2];
         list[0] = pivotPrev;
         list[1] = pivotPost;
-        
-        System.out.println("prev "+list[0]);
-        System.out.println("p "+list[1]);
+       
         return list;
     }
     
     public void quickSort(ListNode head, ListNode tail) {
         if (head == null || head.next == null || head == tail || tail == null)
-            return;
-            
-        System.out.println(head + " " + tail);
-        
+            return;     
         ListNode[] list = partition(head, tail);
-
         quickSort(head, list[0]);
-;
-        quickSort(list[1], tail);
-        
+        quickSort(list[1], tail); 
         return;
     }
 }
