@@ -6,8 +6,6 @@ public int arrange(int[] A) {
     for (int i = 0; i < A.length; i++) {
         int windowStart = A[i];
         int windowEnd = windowStart + balls - 1;
-        if (windowEnd >= 1000000000)
-            break;
         
         int endIndexOfAInWindow = Arrays.binarySearch(A, windowEnd);
         
